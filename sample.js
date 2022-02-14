@@ -1,7 +1,7 @@
 module.exports = function(recipient, text, context, cb) {
 
 const apiKey = context.webtask.secrets.TELNYX_API_KEY;
-const profileId = context.webtask.secrets.PROFILE_ID;
+const profileId = context.webtask.secrets.PROFILE_ID; 
 
 var request = require('request');
 
@@ -16,7 +16,7 @@ var options1 = {
   'url': 'https://api.telnyx.com/v2/verify_profiles',
   headers,
   body: JSON.stringify({
-    "name": "Without Lib Profile",
+    "name": "Auth0 profile",
     "sms": {
       "default_verification_timeout_secs": 300,
       "messaging_enabled": true,
